@@ -19,6 +19,14 @@
         $controller->sayHello($matches[1]);
     } else $controller->main();
 
+    $pattern = '~^$~';
+
+    if(!empty($matches)){
+        $controller->main();
+        return;
+    }
+    echo 'not found'
+
     /*if(!empty($_GET['name'])){
         $controller->sayHello($_GET['name']);
     } else $controller->main();

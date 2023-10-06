@@ -3,10 +3,10 @@ namespace src\Controllers;
 
 class MainController{
     public function main(){
-        echo "Hey";
+        echo "Hey</br>";
     }
     public function sayHello(string $name){
-        echo 'hi, '.$name;
+        echo 'hi, '.$name.'</br>';
     }
 }
 ?>
