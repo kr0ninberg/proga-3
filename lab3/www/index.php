@@ -10,6 +10,8 @@
     // require('src/Models/Articles/Article.php');
 
     $url = $_GET['route'] ?? '';
+    $routes = require('../src/routes.php');
+    //var_dump($routes);
     $pattern = '~^hello/(.*)$~';
     $controller = new src\Controllers\MainController;
     preg_match($pattern, $url, $matches);
