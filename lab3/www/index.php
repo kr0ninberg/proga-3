@@ -9,13 +9,22 @@
     // require('src/Models/Users/User.php');
     // require('src/Models/Articles/Article.php');
 
+    $url = $_GET['route'] ?? '';
+    $pattern = '~^hello/(.*)$~';
     $controller = new src\Controllers\MainController;
+    preg_match($pattern, $url, $matches);
+    //var_dump($matches);
 
-    if(!empty($_GET['name'])){
+    if(!empty($matches)){
+        $controller->sayHello($matches[1]);
+    } else $controller->main();
+
+    /*if(!empty($_GET['name'])){
         $controller->sayHello($_GET['name']);
     } else $controller->main();
 
     $user = new src\models\Users\User('Ivan');
-    $article = new src\models\Articles\Article('title', 'text', $user);
+    $article = new src\models\Articles\Article('title', 'text', $user);*/
+    // echo $url
     //echo $article->getAuthor()->getName();
 ?>
